@@ -1,0 +1,25 @@
+# Игнорируем node_modules
+node_modules/
+
+# Логи
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Сборочные файлы
+dist/
+build/
+
+# ОС
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# .env файлы (если будешь использовать)
+.env
+.env.local
+.env.development
+.env.production
