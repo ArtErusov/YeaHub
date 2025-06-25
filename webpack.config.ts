@@ -2,6 +2,7 @@ import path from 'path';
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import type { Configuration as DevServerConfiguration } from "webpack-dev-server";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 type Mode = "production" | "development"
 
@@ -22,9 +23,18 @@ const isDev = env.mode === "development"
       filename: 'bundle.[contenthash].js',
       clean: true,
     },
-    plugins: [new HtmlWebpackPlugin({ template: path.resolve(__dirname, 'public', 'index.html') })],
+    plugins: [new HtmlWebpackPlugin({ template: path.resolve(__dirname, 'public', 'index.html') }), new MiniCssExtractPlugin()],
     module: {
+      // Порядок важен
       rules: [
+           {
+        test: /\.s[ac]ss$/i,
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          "sass-loader",
+        ],
+      },
         {
           test: /\.tsx?$/,
           use: 'ts-loader',

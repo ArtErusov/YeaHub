@@ -1,5 +1,9 @@
-import React from 'react';
+import './App.scss';
 
 export const App = () => {
-  return <div>Hello world!1111!</div>;
+  return (
+    <button>
+      <span>Hello world!111222!</span>
+    </button>
+  );
 };
