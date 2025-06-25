@@ -8,7 +8,7 @@ yarn-error.log*
 
 # Сборочные файлы
 dist/
-build/
+buildTest/
 
 # ОС
 .DS_Store
