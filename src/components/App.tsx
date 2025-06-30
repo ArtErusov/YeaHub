@@ -1,6 +1,9 @@
 import { Link, Outlet } from 'react-router-dom';
 import styles from './App.module.scss';
 
+// Настраивал вебПак по курсу (ссылка ) что можно еще улучшить
+// пройти ... Добавить сброс стилей добавить папки для FSD
+
 export const App = () => {
   return (
     <button className={styles['hello']}>

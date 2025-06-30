@@ -1,7 +1,7 @@
 import path from 'path';
 import webpack from 'webpack';
 import { BuildOptions } from './types';
-import { buildLoaders } from './BuildLoader';
+import { buildLoaders } from './BuildLoaders';
 import { buildPlugins } from './BuildPlugins';
 import { buildResolver } from './BuildResolver';
 import { buildDevServer } from './BuildDevServer';
