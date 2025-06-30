@@ -6,12 +6,15 @@ import styles from './App.module.scss';
 
 export const App = () => {
   return (
-    <button className={styles['hello']}>
-      <span>Hello world!</span>
+    <div className={styles['container']}>
+      <p>Настройка WebPack по курсу</p>{' '}
+      <a href="https://www.youtube.com/watch?v=acAH2_YT6bs">Ulbi</a>
+      <p>Остановился на 1.48, дальше продолжить настройки</p>
+      <p>добавить папки для FSD</p>
       <Link to="/one">Страница 1</Link>
       <Link to="/two">Страница 2</Link>
       <Outlet />
-    </button>
+    </div>
   );
 };
 
