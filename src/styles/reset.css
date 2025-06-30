@@ -1,0 +1,243 @@
+/* Убираем внутренние и внешние отступы у всех элементов */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== HTML И BODY ===== */
+/* Устанавливаем базовые параметры для корневых элементов */
+html {
+  /* Улучшает читаемость текста на разных устройствах */
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  /* Включаем плавную прокрутку по умолчанию */
+  scroll-behavior: smooth;
+}
+
+body {
+  /* Убираем стандартные отступы браузера */
+  margin: 0;
+  padding: 0;
+  /* Базовый шрифт и высота строки для лучшей читаемости */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  line-height: 1.6;
+  /* Улучшаем рендеринг текста */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== ЗАГОЛОВКИ ===== */
+/* Сбрасываем стили всех заголовков */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/* ===== ТЕКСТОВЫЕ ЭЛЕМЕНТЫ ===== */
+/* Убираем отступы у параграфов и других текстовых элементов */
+p,
+blockquote,
+pre,
+address,
+hr {
+  margin: 0;
+  padding: 0;
+}
+
+/* Сброс стилей для цитат */
+blockquote {
+  quotes: none;
+}
+
+blockquote::before,
+blockquote::after {
+  content: '';
+  content: none;
+}
+
+/* ===== СПИСКИ ===== */
+/* Убираем маркеры и отступы у списков */
+ul,
+ol,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* ===== ССЫЛКИ ===== */
+/* Убираем подчеркивание и наследуем цвет */
+a {
+  text-decoration: none;
+  color: inherit;
+  background-color: transparent;
+}
+
+/* Убираем outline при фокусе (но лучше заменить на свой стиль) */
+a:focus {
+  outline: none;
+}
+
+/* ===== ИЗОБРАЖЕНИЯ И МЕДИА ===== */
+/* Делаем изображения адаптивными */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Убираем рамку у изображений-ссылок в старых браузерах */
+img {
+  border: 0;
+  vertical-align: middle;
+}
+
+/* ===== ФОРМЫ ===== */
+/* Нормализуем внешний вид элементов форм */
+input,
+button,
+textarea,
+select,
+optgroup,
+option {
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+/* Убираем стандартные стили у кнопок */
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Убираем стандартные стили у полей ввода */
+input,
+textarea {
+  background: none;
+  border: none;
+  outline: none;
+}
+
+/* Нормализуем чекбоксы и радиокнопки */
+input[type='checkbox'],
+input[type='radio'] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/* ===== ТАБЛИЦЫ ===== */
+/* Убираем промежутки между ячейками таблицы */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+  text-align: left;
+}
+
+/* ===== СЕМАНТИЧЕСКИЕ ЭЛЕМЕНТЫ HTML5 ===== */
+/* Обеспечиваем правильное отображение в старых браузерах */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/* ===== СКРЫТЫЕ ЭЛЕМЕНТЫ ===== */
+/* Обеспечиваем скрытие элементов с атрибутом hidden */
+[hidden] {
+  display: none !important;
+}
+
+/* ===== ДОПОЛНИТЕЛЬНЫЕ УТИЛИТЫ ===== */
+/* Класс для визуального скрытия элементов (но доступных для скринридеров) */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Класс для отключения выделения текста */
+.no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Класс для отключения событий мыши */
+.no-pointer-events {
+  pointer-events: none;
+}
+
+/* ===== ПЕЧАТЬ ===== */
+/* Оптимизация для печати */
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  img {
+    page-break-inside: avoid;
+  }
+
+  h2,
+  h3,
+  p {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
