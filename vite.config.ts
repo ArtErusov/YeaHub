@@ -7,7 +7,7 @@ export default defineConfig({
 preprocessorOptions: {
   scss: {
  additionalData: `
- @use '@/styles/index.scss';
+ @use '@shared/styles/index.scss';
  `,
  },
  },
@@ -15,7 +15,14 @@ preprocessorOptions: {
   plugins: [react()],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src')
+      '@app': path.resolve(__dirname, 'src/app'),
+      '@shared': path.resolve(__dirname, 'src/shared'),
+      '@entities': path.resolve(__dirname, 'src/entities'),
+      '@features': path.resolve(__dirname, 'src/features'),
+      '@widgets': path.resolve(__dirname, 'src/widgets'),
+      '@pages': path.resolve(__dirname, 'src/pages'),
+      '@processes': path.resolve(__dirname, 'src/processes'),
+      '@': path.resolve(__dirname, 'src'),
     },
   },
 });
