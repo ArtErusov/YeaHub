@@ -1,5 +1,11 @@
-import { ButtonHTMLAttributes, AnchorHTMLAttributes, ReactNode, forwardRef } from 'react';
-import styles from './Button.module.css';
+import clsx from 'clsx';
+import {
+   type ButtonHTMLAttributes,
+   type AnchorHTMLAttributes,
+   type ReactNode,
+   forwardRef,
+} from 'react';
+import styles from './Button.module.scss';
 
 // Константы для вариантов и размеров кнопки
 export const BUTTON_VARIANTS = ['primary', 'secondary', 'link'] as const;
@@ -46,12 +52,12 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPr
       return (
          <Component
             ref={ref}
-            className={classNames(
+            className={clsx(
                styles.button,
                styles[`button-${variant}`],
                styles[`button-${size}`],
-               { [styles['button-full']]: fullWidth },
-               { [styles['button-destructive']]: destructive },
+               fullWidth && styles['button-full'],
+               destructive && styles['button-destructive'],
                className,
             )}
             {...props}
