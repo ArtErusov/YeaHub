@@ -1,33 +1,7 @@
 import clsx from 'clsx';
-import {
-   type ButtonHTMLAttributes,
-   type AnchorHTMLAttributes,
-   type ReactNode,
-   forwardRef,
-} from 'react';
+import { forwardRef } from 'react';
 import styles from './Button.module.scss';
-
-// Константы для вариантов и размеров кнопки
-export const BUTTON_VARIANTS = ['primary', 'secondary', 'link'] as const;
-export const BUTTON_SIZES = ['S', 'M', 'L'] as const;
-
-// Типы для вариантов и размеров
-export type ButtonVariant = (typeof BUTTON_VARIANTS)[number];
-export type ButtonSize = (typeof BUTTON_SIZES)[number];
-
-// Типизация пропсов кнопки
-export interface BaseButtonProps {
-   variant?: ButtonVariant;
-   size?: ButtonSize;
-   fullWidth?: boolean;
-   destructive?: boolean;
-   preffix?: ReactNode;
-   suffix?: ReactNode;
-   badge?: ReactNode;
-}
-
-type ButtonProps = BaseButtonProps &
-   (ButtonHTMLAttributes<HTMLButtonElement> | AnchorHTMLAttributes<HTMLAnchorElement>);
+import type { ButtonProps } from './Button.types';
 
 export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
    (
@@ -45,10 +19,8 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonPr
       },
       ref,
    ) => {
-      // Определяем, какой HTML-элемент использовать
-      const tagName = props.href ? 'a' : 'button';
-      const Component = tagName as React.ElementType;
-
+      const isLink = 'href' in props;
+      const Component = (isLink ? 'a' : 'button') as React.ElementType;
       return (
          <Component
             ref={ref}
