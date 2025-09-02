@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import BurgerButton from '../BurgerButton/BurgerButton';
 import styles from './Header.module.scss';
 import { Button } from '@/shared/ui/Button/Button';
 import logo from '/images/logo.svg';
@@ -20,6 +21,7 @@ function Header() {
          <div className={styles['header__actions']}>
             <Button variant="secondary">Вход</Button>
             <Button>Регистрация</Button>
+            <BurgerButton />
          </div>
       </header>
    );
