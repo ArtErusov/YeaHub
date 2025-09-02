@@ -1,5 +1,6 @@
 import { Outlet } from 'react-router-dom';
-import { Footer, Header } from '@/Test';
+import Footer from '@/widgets/footer';
+import { Header } from '@/widgets/header';
 
 function AppLayout() {
    return (

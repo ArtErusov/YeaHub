@@ -1,19 +1,3 @@
-export function Footer() {
-   return (
-      <>
-         <p>подвал</p>
-      </>
-   );
-}
-
-export function Header() {
-   return (
-      <>
-         <p>шапка</p>
-      </>
-   );
-}
-
 export function Test1() {
    return (
       <>
