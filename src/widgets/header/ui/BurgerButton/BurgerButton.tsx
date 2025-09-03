@@ -1,19 +1,17 @@
 import clsx from 'clsx';
-import { useState } from 'react';
 import styles from './BurgerButton.module.scss';
+import type { BurgerButtonProps } from './BurgerButton.types';
 
-export const BurgerButton = () => {
-   const [isActive, setIsActive] = useState<boolean>(false);
-
+const BurgerButton = ({ isActive, onClick, className }: BurgerButtonProps) => {
    return (
       <button
          type="button"
          aria-label="Open menu"
          title="Open menu"
-         className={clsx(styles['burger-button'], {
+         className={clsx(styles['burger-button'], className, {
             [styles['is-active']]: isActive,
          })}
-         onClick={() => setIsActive(!isActive)}
+         onClick={onClick}
       >
          <svg className={styles['burger-button__svg']} width="30" height="30" viewBox="0 0 100 100">
             <path

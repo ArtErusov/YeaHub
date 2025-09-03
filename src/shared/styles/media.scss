@@ -1,0 +1,25 @@
+$tablet: 708px;
+
+@mixin tablet {
+   @media (width <= $tablet) {
+      @content;
+   }
+}
+
+@mixin tablet-above {
+   @media (width > $tablet) {
+      @content;
+   }
+}
+
+.visible-tablet {
+   @include tablet-above {
+      display: none !important;
+   }
+}
+
+.hidden-tablet {
+   @include tablet {
+      display: none !important;
+   }
+}

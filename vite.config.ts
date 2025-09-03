@@ -14,6 +14,7 @@ export default defineConfig({
          scss: {
             additionalData: `
  @use '@shared/styles/index.scss';
+ @use '@shared/styles/media.scss' as *;
  `,
          },
       },

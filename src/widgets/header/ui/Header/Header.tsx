@@ -1,3 +1,5 @@
+import clsx from 'clsx';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import BurgerButton from '../BurgerButton/BurgerButton';
 import styles from './Header.module.scss';
@@ -5,6 +7,7 @@ import { Button } from '@/shared/ui/Button/Button';
 import logo from '/images/logo.svg';
 
 function Header() {
+   const [isMenuOpen, setIsMenuOpen] = useState(false);
    return (
       <header className={styles['header']}>
          <Link to="/" className={styles['header__logo']}>
@@ -18,11 +21,15 @@ function Header() {
                Тренажер
             </Link>
          </nav>
-         <div className={styles['header__actions']}>
-            <Button variant="secondary">Вход</Button>
+         <div className={clsx(styles['header__actions'], styles['hidden-tablet'])}>
+            <Button variant="link">Вход</Button>
             <Button>Регистрация</Button>
-            <BurgerButton />
          </div>
+         <BurgerButton
+            isActive={isMenuOpen}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className={clsx(styles['header__burger-button'], styles['visible-tablet'])}
+         />
       </header>
    );
 }
