@@ -3,11 +3,7 @@ import { useState } from 'react';
 import styles from './BurgerButton.module.scss';
 
 export const BurgerButton = () => {
-   const [isActive, setIsActive] = useState(false);
-
-   const toggleMenu = () => {
-      setIsActive((prev) => !prev);
-   };
+   const [isActive, setIsActive] = useState<boolean>(false);
 
    return (
       <button
@@ -17,7 +13,7 @@ export const BurgerButton = () => {
          className={clsx(styles['burger-button'], {
             [styles['is-active']]: isActive,
          })}
-         onClick={toggleMenu}
+         onClick={() => setIsActive(!isActive)}
       >
          <svg className={styles['burger-button__svg']} width="30" height="30" viewBox="0 0 100 100">
             <path
