@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import BurgerButton from '../BurgerButton/BurgerButton';
+import BurgerButton from '../../BurgerButton/ui/BurgerButton';
 import styles from './Header.module.scss';
 import { Button } from '@/shared/ui/Button/Button';
 import logo from '/images/logo.svg';

@@ -1,6 +1,6 @@
 import clsx from 'clsx';
+import type { BurgerButtonProps } from '../module/BurgerButton.types';
 import styles from './BurgerButton.module.scss';
-import type { BurgerButtonProps } from './BurgerButton.types';
 
 const BurgerButton = ({ isActive, onClick, className }: BurgerButtonProps) => {
    return (

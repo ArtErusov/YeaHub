@@ -1,11 +1,16 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { RouterProvider } from 'react-router-dom';
-import router from './providers/route/AppRoute';
+import { router } from './providers';
 
-// import App from './App.tsx';
+const rootElement = document.getElementById('root') as HTMLDivElement | null;
 
-createRoot(document.getElementById('root')!).render(
+if (!rootElement) {
+   throw new Error('Root Element is not defined!');
+}
+
+const root = createRoot(rootElement);
+root.render(
    <StrictMode>
       <RouterProvider router={router} />
    </StrictMode>,
