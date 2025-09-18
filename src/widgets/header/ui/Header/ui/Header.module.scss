@@ -1,11 +1,15 @@
 .header {
-   height: 64px;
-   display: flex;
-   align-items: center;
-   max-width: 1256px;
-   padding: 0 20px;
    background: var(--color-white);
-   margin: 0 auto 40px;
+   width: 100%;
+   &__container {
+      height: 64px;
+      display: flex;
+      align-items: center;
+      max-width: 1256px;
+      padding: 0 20px;
+
+      margin: 0 auto 40px;
+   }
 
    &__actions {
       display: flex;
