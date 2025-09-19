@@ -1,3 +1,4 @@
 import router from "./route/AppRoute";
+import store from "./store/AppStore";
 
-export { router };
+export { store, router };
