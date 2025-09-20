@@ -4,11 +4,11 @@ import baseApi from "@/shared/api/baseApi";
 const questionsListApi = baseApi.injectEndpoints({
   endpoints: builder => ({
     getQuestions: builder.query<QuestionsResponse, QuestionsQueryParams>({
-      query: ({ page}) => ({
+      query: ({ page, title}) => ({
         url: "/questions/public-questions",
         params: {
-          page
-         
+          page,
+         ...(title ? { title } : {}),
         },
       }),
     }),

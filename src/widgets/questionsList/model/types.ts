@@ -7,5 +7,6 @@ export interface QuestionsResponse {
 
 export interface QuestionsQueryParams {
   page: number;
+  title?: string;
 }
 

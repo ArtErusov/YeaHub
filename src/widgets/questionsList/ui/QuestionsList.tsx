@@ -9,15 +9,18 @@ function QuestionsList() {
 
    const page = Number(searchParams.get('page')) || 1;
 
-   const { data } = useGetQuestionsQuery({ page });
+   const title = searchParams.get('title') || '';
+   const { data } = useGetQuestionsQuery({ page, title });
+
    const questions = data?.data || [];
    // Получить значения из апи
    const totalPages = 50;
 
    const handlePageChange = (newPage: number) => {
-      setSearchParams({ page: String(newPage) });
+      const newParams = new URLSearchParams(searchParams);
+      newParams.set('page', String(newPage));
+      setSearchParams(newParams);
    };
-
    const questionsBlockTestData: string = 'React';
 
    return (
