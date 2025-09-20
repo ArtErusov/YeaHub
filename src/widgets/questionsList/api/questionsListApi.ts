@@ -1,4 +1,3 @@
-
 import type { QuestionsQueryParams, QuestionsResponse } from "../model/types";
 import baseApi from "@/shared/api/baseApi";
 
