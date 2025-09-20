@@ -1,0 +1,36 @@
+.pagination {
+   display: flex;
+   gap: 3px;
+
+   &__btn-arrow {
+      fill: var(--color-white);
+      stroke: var(--color-purple-700);
+
+      &:hover {
+         stroke: var(--color-white);
+         fill: var(--color-purple-700);
+      }
+      &_next {
+         transform: rotate(180deg);
+      }
+      &:disabled {
+         stroke: var(--color-white);
+         fill: var(--color-white);
+      }
+   }
+
+   &__btn {
+      padding: 2px 7px;
+      border-radius: 2px;
+      font-weight: 500;
+      font-size: 14px;
+      color: var(--color-black-700);
+      cursor: pointer;
+      transition: 0.2s ease;
+      &:hover,
+      &:disabled {
+         background: var(--color-purple-700);
+         color: var(--color-white);
+      }
+   }
+}

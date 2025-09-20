@@ -1,0 +1,22 @@
+.info-item {
+   display: flex;
+   align-items: center;
+   height: 35px;
+   border-radius: 8px;
+   padding: 6px 10px;
+   background-color: var(--color-black-25);
+   gap: 10px;
+
+   &__variant {
+      font-weight: 600;
+      font-size: 14px;
+   }
+   &__value {
+      border-radius: 4px;
+      padding: 2px 4px;
+      background-color: var(--color-purple-700);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--color-white);
+   }
+}

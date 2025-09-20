@@ -1,10 +1,10 @@
 import styles from './QuestionsPage.module.scss';
-import QuestionsBlock from '@/widgets/questionsBlock';
+import QuestionsList from '@/widgets/questionsList';
 
 function QuestionsPage() {
    return (
       <div className={styles['questions-page']}>
-         <QuestionsBlock />
+         <QuestionsList />
       </div>
    );
 }
