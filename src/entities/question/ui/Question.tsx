@@ -6,9 +6,9 @@ import { Link } from 'react-router-dom';
 
 import styles from './Question.module.scss';
 import InfoItem from '@/shared/ui/InfoItem';
-import type { Question } from '@/shared/ui/types';
+import type { QuestionType } from '@/shared/types/QuestionType';
 
-function Question({ id, rate, title, complexity, shortAnswer }: Question) {
+function Question({ id, rate, title, complexity, shortAnswer }: QuestionType) {
    const [isOpen, setIsOpen] = useState<boolean>(false);
 
    const safeHTML = DOMPurify.sanitize(shortAnswer);

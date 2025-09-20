@@ -5,7 +5,7 @@ import Question from '@/entities/question';
 import Pagination from '@/shared/ui/Pagination';
 
 function QuestionsList() {
-   const [searchParams, setSearchParams] = useSearchParams();
+   const [searchParams] = useSearchParams();
 
    const page = Number(searchParams.get('page')) || 1;
 
@@ -14,7 +14,7 @@ function QuestionsList() {
 
    const questions = data?.data || [];
 
-   const totalPages = 50;
+   const totalPages = data?.total ? Math.ceil(data.total / 10) : 0;
 
    const questionsBlockTestData: string = 'React';
 
