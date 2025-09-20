@@ -1,17 +1,26 @@
 import ArrowIcon from '@shared/assets/icon/Arrow_btn.svg?react';
 import clsx from 'clsx';
+import { useSearchParams } from 'react-router-dom';
 import { getPagesRange } from '../lib/getPagesRange';
 import type { PaginationProps } from '../model/types';
 import styles from './Pagination.module.scss';
 
-function Pagination({ currentPage, totalPages, onPageChange }: PaginationProps) {
+function Pagination({ totalPages }: PaginationProps) {
    const NUMBER_OF_PAGES = 10;
+   const [searchParams, setSearchParams] = useSearchParams();
+   const currentPage = Number(searchParams.get('page')) || 1;
 
    const { pages, groupIndex, totalGroups } = getPagesRange({
       currentPage,
       totalPages,
       numberOfPages: NUMBER_OF_PAGES,
    });
+
+   const onPageChange = (newPage: number) => {
+      const newParams = new URLSearchParams(searchParams);
+      newParams.set('page', String(newPage));
+      setSearchParams(newParams);
+   };
 
    const handlePreviousPage = () => onPageChange(currentPage - 1);
    const handleNextPage = () => onPageChange(currentPage + 1);

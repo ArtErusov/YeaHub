@@ -13,14 +13,9 @@ function QuestionsList() {
    const { data } = useGetQuestionsQuery({ page, title });
 
    const questions = data?.data || [];
-   // Получить значения из апи
+
    const totalPages = 50;
 
-   const handlePageChange = (newPage: number) => {
-      const newParams = new URLSearchParams(searchParams);
-      newParams.set('page', String(newPage));
-      setSearchParams(newParams);
-   };
    const questionsBlockTestData: string = 'React';
 
    return (
@@ -39,11 +34,7 @@ function QuestionsList() {
                />
             ))}
             <div className={styles['questions-list__pagination']}>
-               <Pagination
-                  currentPage={page}
-                  totalPages={totalPages}
-                  onPageChange={handlePageChange}
-               />
+               <Pagination totalPages={totalPages} />
             </div>
          </div>
       </div>
