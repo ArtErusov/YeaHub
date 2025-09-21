@@ -2,7 +2,6 @@
    display: flex;
    flex-direction: column;
    gap: 16px;
-   background-color: aquamarine;
    &__pagination {
       display: flex;
       justify-content: center;
@@ -16,7 +15,6 @@
    border-radius: 24px;
    padding: 24px 20px 40px;
    background: var(--color-white);
-   margin-bottom: 130px;
    &__separator {
       width: 100%;
       background-color: var(--color-black-50);
