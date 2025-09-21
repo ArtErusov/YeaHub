@@ -1,26 +1,15 @@
-import { useSearchParams } from 'react-router-dom';
-import { useGetQuestionsQuery } from '../api/questionsListApi';
+import { useQuestions } from '../model/useQuestions';
 import styles from './QuestionsList.module.scss';
 import Question from '@/entities/question';
 import Pagination from '@/features/pagination';
 
 function QuestionsList() {
-   const [searchParams] = useSearchParams();
+   const { questions, totalPages, isLoading, error } = useQuestions();
 
-   const page = Number(searchParams.get('page')) || 1;
-   const title = searchParams.get('title') || '';
-   const skillParam = searchParams.get('skills');
-   const skills = skillParam ? [Number(skillParam)] : [];
-   const rateParam = searchParams.get('rate');
-   const rate = rateParam ? [Number(rateParam)] : [];
+   const questionsBlockTestData = 'React';
 
-   const { data } = useGetQuestionsQuery({ page, title, skills, rate });
-
-   const questions = data?.data || [];
-
-   const totalPages = data?.total ? Math.ceil(data.total / 10) : 0;
-
-   const questionsBlockTestData: string = 'React';
+   if (isLoading) return <div>Загрузка...</div>;
+   if (error) return <div>Ошибка при загрузке вопросов</div>;
 
    return (
       <div className={styles['questions-block']}>

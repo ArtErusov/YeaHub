@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import { getPagesRange } from '../lib/getPagesRange';
 import { usePagination } from '../lib/usePagination';
 import type { PaginationProps } from '../model/types';
@@ -20,27 +21,34 @@ function Pagination({ totalPages }: PaginationProps) {
    const handleNextGroup = () => onPageChange(groupIndex * NUMBER_OF_PAGES + 1);
 
    return (
-      <div className={styles.pagination}>
-         <ArrowButton
-            direction="prev"
-            onClick={() => onPageChange(currentPage - 1)}
-            disabled={currentPage === 1}
-         />
+      totalPages > 1 && (
+         <div className={clsx(styles['pagination'])}>
+            <ArrowButton
+               direction="prev"
+               onClick={() => onPageChange(currentPage - 1)}
+               disabled={currentPage === 1}
+            />
 
-         {groupIndex > 1 && <DotsButton onClick={handlePreviousGroup} />}
+            {groupIndex > 1 && <DotsButton onClick={handlePreviousGroup} />}
 
-         {pages.map((page) => (
-            <PageButton key={page} page={page} currentPage={currentPage} onClick={onPageChange} />
-         ))}
+            {pages.map((page) => (
+               <PageButton
+                  key={page}
+                  page={page}
+                  currentPage={currentPage}
+                  onClick={onPageChange}
+               />
+            ))}
 
-         {groupIndex < totalGroups && <DotsButton onClick={handleNextGroup} />}
+            {groupIndex < totalGroups && <DotsButton onClick={handleNextGroup} />}
 
-         <ArrowButton
-            direction="next"
-            onClick={() => onPageChange(currentPage + 1)}
-            disabled={currentPage === totalPages}
-         />
-      </div>
+            <ArrowButton
+               direction="next"
+               onClick={() => onPageChange(currentPage + 1)}
+               disabled={currentPage === totalPages}
+            />
+         </div>
+      )
    );
 }
 
