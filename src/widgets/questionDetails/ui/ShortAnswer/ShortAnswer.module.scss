@@ -1,0 +1,16 @@
+.short-answer {
+   background-color: var(--color-white);
+   border-radius: 24px;
+   padding: 24px;
+   box-shadow: var(--box-shadow);
+   &__title {
+      font-weight: 500;
+      font-size: 1.5rem;
+      color: var(--color-black-800);
+   }
+   &__description {
+      margin-top: 10px;
+      font-weight: 500;
+      color: var(--color-black-800);
+   }
+}

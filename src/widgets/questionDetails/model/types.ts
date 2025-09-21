@@ -49,3 +49,18 @@ export interface Question {
 export interface QueryParams {
   id: string | undefined;
 }
+
+
+export interface  LongAnswerProps  {
+   longAnswer: string;
+};
+
+export interface ShortAnswerProps  {
+   shortAnswer: string;
+};
+
+
+export interface TitleAnswerProps {
+   title: string;
+   description: string;
+}
