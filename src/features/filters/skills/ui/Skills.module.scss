@@ -1,0 +1,25 @@
+.skills {
+   margin-bottom: 2px;
+   &__title {
+      font-weight: 400;
+      font-size: 14px;
+      color: var(--color-black-700);
+      margin-bottom: 8px;
+   }
+   &__list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+   }
+
+   &__show {
+      margin-top: 8px;
+      font-weight: 500;
+      font-size: 14px;
+      color: var(--color-purple-800);
+      cursor: pointer;
+      &:hover {
+         text-decoration: underline;
+      }
+   }
+}

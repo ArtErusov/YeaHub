@@ -9,7 +9,9 @@ function QuestionsList() {
 
    const page = Number(searchParams.get('page')) || 1;
    const title = searchParams.get('title') || '';
-   const { data } = useGetQuestionsQuery({ page, title });
+   const skillParam = searchParams.get('skills');
+   const skills = skillParam ? [Number(skillParam)] : [];
+   const { data } = useGetQuestionsQuery({ page, title, skills });
 
    const questions = data?.data || [];
 
