@@ -5,8 +5,8 @@ import arrow from '/svg/arrowOpen.svg';
 import { Link } from 'react-router-dom';
 
 import styles from './Question.module.scss';
-import InfoItem from '@/shared/ui/InfoItem';
 import type { QuestionType } from '@/shared/types/QuestionType';
+import InfoItem from '@/shared/ui/InfoItem';
 
 function Question({ id, rate, title, complexity, shortAnswer }: QuestionType) {
    const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -37,7 +37,7 @@ function Question({ id, rate, title, complexity, shortAnswer }: QuestionType) {
                   <InfoItem variant={'complexity'} value={complexity} />
                </div>
 
-               <Link to="/" className={styles['question__details']}>
+               <Link to={`/questions/${id}`} className={styles['question__details']}>
                   Подробнее
                </Link>
             </div>
