@@ -11,7 +11,10 @@ function QuestionsList() {
    const title = searchParams.get('title') || '';
    const skillParam = searchParams.get('skills');
    const skills = skillParam ? [Number(skillParam)] : [];
-   const { data } = useGetQuestionsQuery({ page, title, skills });
+   const rateParam = searchParams.get('rate');
+   const rate = rateParam ? [Number(rateParam)] : [];
+
+   const { data } = useGetQuestionsQuery({ page, title, skills, rate });
 
    const questions = data?.data || [];
 

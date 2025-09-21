@@ -1,0 +1,11 @@
+.rating {
+   font-size: 14px;
+   font-weight: 400;
+   margin-top: 20px;
+   color: var(--color-black-700);
+   margin-bottom: 8px;
+   &__list {
+      display: flex;
+      gap: 8px;
+   }
+}

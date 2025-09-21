@@ -10,5 +10,6 @@ export interface QuestionsQueryParams {
   page: number;
   title?: string;
   skills?: number[];
+  rate?: number[];
 }
 
