@@ -1,9 +1,9 @@
-import type { Question } from "@/shared/types/QuestionType";
+import type { QuestionType } from "@/shared/types/QuestionType";
 
 
 export interface QuestionsResponse {
   total: number;
-  data: Question[];
+  data: QuestionType[];
 }
 
 export interface QuestionsQueryParams {

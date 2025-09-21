@@ -2,13 +2,12 @@ import { useSearchParams } from 'react-router-dom';
 import { useGetQuestionsQuery } from '../api/questionsListApi';
 import styles from './QuestionsList.module.scss';
 import Question from '@/entities/question';
-import Pagination from '@/shared/ui/Pagination';
+import Pagination from '@/features/pagination';
 
 function QuestionsList() {
    const [searchParams] = useSearchParams();
 
    const page = Number(searchParams.get('page')) || 1;
-
    const title = searchParams.get('title') || '';
    const { data } = useGetQuestionsQuery({ page, title });
 
