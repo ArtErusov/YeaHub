@@ -3,8 +3,8 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Header.module.scss';
 import logo from '/svg/logo.svg';
-import { BurgerButton } from '@/shared/ui/BurgerButton';
-import { Button } from '@/shared/ui/Button';
+import { BurgerButton } from '@/shared/ui/burgerButton';
+import { Button } from '@/shared/ui/button';
 
 export const Header = () => {
    const [isMenuOpen, setIsMenuOpen] = useState(false);

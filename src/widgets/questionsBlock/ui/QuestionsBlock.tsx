@@ -1,6 +1,7 @@
+import { QuestionsPagination } from '@/features/questionsPagination';
 import { useQuestions } from '../model/useQuestions';
 import styles from './QuestionsBlock.module.scss';
-import Pagination from '@/features/pagination';
+
 import { QuestionsList } from './questionsList/QuestionsList';
 
 export const QuestionsBlock = () => {
@@ -18,7 +19,7 @@ export const QuestionsBlock = () => {
          <div className={styles['questions-block__separator']} />
          <div className={styles['questions-block__list']}>
             <QuestionsList questions={questions} />
-            <Pagination totalPages={totalPages} />
+            <QuestionsPagination totalPages={totalPages} />
          </div>
       </div>
    );
