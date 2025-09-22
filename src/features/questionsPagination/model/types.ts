@@ -1,3 +1,3 @@
-export interface PaginationProps {
-  totalPages?: number;
+export interface QuestionsPaginationProps {
+   totalPages: number;
 }

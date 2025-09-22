@@ -1,9 +1,6 @@
 import { Pagination } from '@/shared/ui/pagination';
 import { usePagination } from '../lib/usePagination';
-
-interface QuestionsPaginationProps {
-   totalPages: number;
-}
+import type { QuestionsPaginationProps } from '../model/types';
 
 export function QuestionsPagination({ totalPages }: QuestionsPaginationProps) {
    const { currentPage, onPageChange } = usePagination();

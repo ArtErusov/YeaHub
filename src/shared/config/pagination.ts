@@ -1,1 +1,1 @@
-export const NUMBER_OF_PAGES = 10;
+export const QUESTIONS_PER_PAGE = 10;

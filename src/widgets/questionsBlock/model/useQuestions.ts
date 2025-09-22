@@ -1,5 +1,6 @@
 import { useSearchParams } from 'react-router-dom';
 import { useGetQuestionsQuery } from '../api/questionsListApi';
+import { QUESTIONS_PER_PAGE } from '@/shared/config/pagination';
 
 export function useQuestions() {
   const [searchParams] = useSearchParams();
@@ -18,9 +19,11 @@ export function useQuestions() {
     rate,
   });
 
+    const totalPages = data?.total ? Math.ceil(data.total / QUESTIONS_PER_PAGE) : 0;
+
   return {
     questions: data?.data || [],
-    totalPages: data?.total,
+    totalPages,
     isLoading,
     error,
   };

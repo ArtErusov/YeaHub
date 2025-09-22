@@ -19,7 +19,7 @@ export const QuestionsBlock = () => {
          <div className={styles['questions-block__separator']} />
          <div className={styles['questions-block__list']}>
             <QuestionsList questions={questions} />
-            <QuestionsPagination totalPages={totalPages} />
+            <QuestionsPagination totalPages={totalPages ?? 0} />
          </div>
       </div>
    );

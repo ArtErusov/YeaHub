@@ -3,13 +3,8 @@ import { ArrowButton } from './components/ArrowButton';
 import { DotsButton } from './components/DotsButton';
 import { PageButton } from './components/PageButton';
 import styles from './Pagination.module.scss';
-
-interface PaginationProps {
-   totalPages: number;
-   currentPage: number;
-   onPageChange: (page: number) => void;
-   numberOfPages?: number;
-}
+import { getPagesRange } from '../lib/getPagesRange';
+import type { PaginationProps } from '../model/types';
 
 export function Pagination({
    totalPages,
@@ -19,15 +14,14 @@ export function Pagination({
 }: PaginationProps) {
    if (totalPages <= 1) return null;
 
-   const groupIndex = Math.ceil(currentPage / numberOfPages);
-   const firstPage = (groupIndex - 1) * numberOfPages + 1;
-   const lastPage = Math.min(groupIndex * numberOfPages, totalPages);
-   const pages = Array.from({ length: lastPage - firstPage + 1 }, (_, i) => firstPage + i);
-   const totalGroups = Math.ceil(totalPages / numberOfPages);
+   const { pages, groupIndex, totalGroups } = getPagesRange({
+      currentPage,
+      totalPages,
+      numberOfPages,
+   });
 
    const handlePreviousGroup = () => onPageChange((groupIndex - 2) * numberOfPages + 1);
    const handleNextGroup = () => onPageChange(groupIndex * numberOfPages + 1);
-
    return (
       <div className={clsx(styles['pagination'])}>
          <ArrowButton
