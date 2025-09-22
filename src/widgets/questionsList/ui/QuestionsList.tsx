@@ -6,14 +6,12 @@ import Pagination from '@/features/pagination';
 function QuestionsList() {
    const { questions, totalPages, isLoading, error } = useQuestions();
 
-   const questionsBlockTestData = 'React';
-
    if (isLoading) return <div>Загрузка...</div>;
    if (error) return <div>Ошибка при загрузке вопросов</div>;
 
    return (
       <div className={styles['questions-block']}>
-         <h2 className={styles['questions-block__title']}>{`Вопросы ${questionsBlockTestData}`}</h2>
+         <h2 className={styles['questions-block__title']}>Вопросы</h2>
          <div className={styles['questions-block__separator']} />
          <div className={styles['questions-list']}>
             {questions.map((question) => (

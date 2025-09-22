@@ -1,12 +1,12 @@
 import clsx from 'clsx';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import BurgerButton from '../../BurgerButton/ui/BurgerButton';
 import styles from './Header.module.scss';
-import { Button } from '@/shared/ui/Button/Button';
 import logo from '/svg/logo.svg';
+import { BurgerButton } from '@/shared/ui/BurgerButton';
+import { Button } from '@/shared/ui/Button';
 
-function Header() {
+export const Header = () => {
    const [isMenuOpen, setIsMenuOpen] = useState(false);
    return (
       <header className={styles['header']}>
@@ -34,6 +34,4 @@ function Header() {
          </div>
       </header>
    );
-}
-
-export default Header;
+};

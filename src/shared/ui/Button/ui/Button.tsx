@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { forwardRef } from 'react';
+import type { ButtonProps } from '../model/types';
 import styles from './Button.module.scss';
-import type { ButtonProps } from './Button.types';
 
 export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
    (

@@ -1,8 +1,8 @@
 import clsx from 'clsx';
-import type { BurgerButtonProps } from '../module/BurgerButton.types';
+import type { BurgerButtonProps } from '../module/types';
 import styles from './BurgerButton.module.scss';
 
-const BurgerButton = ({ isActive, onClick, className }: BurgerButtonProps) => {
+export const BurgerButton = ({ isActive, onClick, className }: BurgerButtonProps) => {
    return (
       <button
          type="button"
@@ -37,5 +37,3 @@ const BurgerButton = ({ isActive, onClick, className }: BurgerButtonProps) => {
       </button>
    );
 };
-
-export default BurgerButton;
