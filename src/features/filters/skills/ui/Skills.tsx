@@ -1,43 +1,26 @@
 import { useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
 import { useGetSkillsQuery } from '../api/skillsApi';
-import styles from './Skills.module.scss';
+import { useFilters } from '@/shared/lib/hooks/useFilters';
 import SelectionItem from '@/shared/ui/selectionItem';
+import styles from './Skills.module.scss';
 
-function Skills() {
-   const [showAll, setShowAll] = useState<boolean>(false);
-   const [searchParams, setSearchParams] = useSearchParams();
-   const { data, isLoading, error } = useGetSkillsQuery();
+export function Skills() {
+   const [showAll, setShowAll] = useState(false);
+   const { filters, setFilter } = useFilters();
+   const { data: skills, isLoading, error } = useGetSkillsQuery();
 
-   const displayedSkills = showAll ? data : data?.slice(0, 5);
+   if (isLoading) return <p>Загрузка навыков...</p>;
+   if (error) return <p>Произошла ошибка. Попробуйте позже.</p>;
+   if (!skills || skills.length === 0) return <p>Навыки не найдены.</p>;
 
-   function handleSelectSkill(skillId: number) {
-      const newParams = new URLSearchParams(searchParams);
+   const displayedSkills = showAll ? skills : skills.slice(0, 5);
+   const selectedSkills = filters.skills?.map(String) || [];
 
-      const currentSkill = newParams.get('skills');
+   const handleClickSkill = (skillId: string) => {
+      const isSelected = selectedSkills.includes(skillId);
+      setFilter('skills', isSelected ? null : [skillId]);
+   };
 
-      if (currentSkill === String(skillId)) {
-         newParams.delete('skills');
-      } else {
-         newParams.set('skills', String(skillId));
-      }
-      newParams.set('page', '1');
-      setSearchParams(newParams);
-   }
-
-   if (isLoading) {
-      return <p>Загрузка навыков...</p>;
-   }
-
-   if (error) {
-      return <p>Произошла ошибка. Попробуйте позже.</p>;
-   }
-
-   if (!displayedSkills || displayedSkills.length === 0) {
-      return <p>Навыки не найдены.</p>;
-   }
-
-   const selectedSkillId = searchParams.get('skills');
    return (
       <div className={styles['skills']}>
          <p className={styles['skills__title']}>Выберите навык</p>
@@ -46,8 +29,8 @@ function Skills() {
                <SelectionItem
                   key={skill.id}
                   text={skill.title}
-                  isSelected={selectedSkillId === String(skill.id)}
-                  onClick={() => handleSelectSkill(skill.id)}
+                  isSelected={selectedSkills.includes(String(skill.id))}
+                  onClick={() => handleClickSkill(String(skill.id))}
                />
             ))}
          </ul>

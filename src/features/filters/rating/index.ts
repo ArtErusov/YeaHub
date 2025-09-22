@@ -1,2 +1,2 @@
-export {default} from "./ui/Rating";
+export {Rating} from "./ui/Rating";
 
