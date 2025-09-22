@@ -20,7 +20,7 @@ export function useQuestions() {
 
   return {
     questions: data?.data || [],
-    totalPages: data?.total ? Math.ceil(data.total / 10) : 0,
+    totalPages: data?.total,
     isLoading,
     error,
   };

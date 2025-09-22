@@ -1,7 +1,7 @@
 import styles from './Footer.module.scss';
 import logoLight from '/svg/logo-light.svg';
 
-function Footer() {
+export const Footer = () => {
    return (
       <footer className={styles['footer']}>
          <div className={styles['footer__block']}>
@@ -20,6 +20,4 @@ function Footer() {
          </div>
       </footer>
    );
-}
-
-export default Footer;
+};

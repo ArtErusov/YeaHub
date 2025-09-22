@@ -1,14 +1,12 @@
+import { QuestionsBlock } from '@/widgets/questionsBlock';
 import styles from './QuestionsPage.module.scss';
 import Filters from '@/widgets/filters';
-import QuestionsList from '@/widgets/questionsList';
 
-function QuestionsPage() {
+export const QuestionsPage = () => {
    return (
       <div className={styles['questions-page']}>
-         <QuestionsList />
+         <QuestionsBlock />
          <Filters />
       </div>
    );
-}
-
-export default QuestionsPage;
+};

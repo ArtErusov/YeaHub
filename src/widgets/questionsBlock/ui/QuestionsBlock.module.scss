@@ -1,0 +1,31 @@
+.questions-block {
+   width: 805px;
+   height: auto;
+   border-radius: 24px;
+   padding: 24px 20px 40px;
+   background: var(--color-white);
+   &__separator {
+      width: 100%;
+      background-color: var(--color-black-50);
+      height: 1px;
+      margin: 20px 0;
+   }
+   &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+   }
+
+   &__skeleton {
+      width: 805px;
+      height: 1;
+      border-radius: 24px;
+      padding: 24px 20px 40px;
+      background: var(--color-white);
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      font-size: 35px;
+   }
+}

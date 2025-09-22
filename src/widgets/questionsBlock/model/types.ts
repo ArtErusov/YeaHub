@@ -13,3 +13,7 @@ export interface QuestionsQueryParams {
   rate?: number[];
 }
 
+
+export interface QuestionsListProps {
+  questions: QuestionType[];
+}
