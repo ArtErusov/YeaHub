@@ -1,6 +1,6 @@
 import type { QuestionsListProps } from '../../model/types';
 import styles from './QuestionsList.module.scss';
-import Question from '@/entities/question';
+import { Question } from '@/entities/question';
 
 export const QuestionsList = ({ questions }: QuestionsListProps) => {
    return (

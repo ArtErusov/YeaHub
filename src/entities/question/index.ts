@@ -1,2 +1,2 @@
-export { default } from "./ui/Question";
+export { Question } from "./ui/Question";
 

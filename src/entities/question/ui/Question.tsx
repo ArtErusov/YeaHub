@@ -1,17 +1,17 @@
-import clsx from 'clsx';
-import DOMPurify from 'dompurify';
 import { useState } from 'react';
-import arrow from '/svg/arrowOpen.svg';
 import { Link } from 'react-router-dom';
-
+import clsx from 'clsx';
 import styles from './Question.module.scss';
 import type { QuestionType } from '@/shared/types/QuestionType';
-import InfoItem from '@/shared/ui/InfoItem';
 
-function Question({ id, rate, title, complexity, shortAnswer }: QuestionType) {
+import { sanitizeHTML } from '@/shared/lib/sanitizeHTML';
+import arrow from '/svg/arrowOpen.svg';
+import { QuestionMetric } from '@/shared/ui/questionMetric';
+
+export const Question = ({ id, rate, title, complexity, shortAnswer }: QuestionType) => {
    const [isOpen, setIsOpen] = useState<boolean>(false);
 
-   const safeHTML = DOMPurify.sanitize(shortAnswer);
+   const safeHTML = sanitizeHTML(shortAnswer);
 
    return (
       <li className={styles['question']}>
@@ -33,8 +33,8 @@ function Question({ id, rate, title, complexity, shortAnswer }: QuestionType) {
          >
             <div className={styles['question__content-top']}>
                <div className={styles['question__meta']}>
-                  <InfoItem variant={'rating'} value={rate} />
-                  <InfoItem variant={'complexity'} value={complexity} />
+                  <QuestionMetric variant={'rating'} value={rate} />
+                  <QuestionMetric variant={'complexity'} value={complexity} />
                </div>
 
                <Link to={`/questions/${id}`} className={styles['question__details']}>
@@ -45,6 +45,4 @@ function Question({ id, rate, title, complexity, shortAnswer }: QuestionType) {
          </div>
       </li>
    );
-}
-
-export default Question;
+};
