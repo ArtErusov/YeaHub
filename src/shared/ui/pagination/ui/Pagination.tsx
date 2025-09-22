@@ -5,23 +5,20 @@ import { PageButton } from './components/PageButton';
 import styles from './Pagination.module.scss';
 import { getPagesRange } from '../lib/getPagesRange';
 import type { PaginationProps } from '../model/types';
+import { NUMBER_OF_PAGES } from '@/shared/config/pagination';
 
-export function Pagination({
-   totalPages,
-   currentPage,
-   onPageChange,
-   numberOfPages = 10,
-}: PaginationProps) {
+export function Pagination({ totalPages, currentPage, onPageChange }: PaginationProps) {
    if (totalPages <= 1) return null;
+
+   NUMBER_OF_PAGES;
 
    const { pages, groupIndex, totalGroups } = getPagesRange({
       currentPage,
       totalPages,
-      numberOfPages,
    });
 
-   const handlePreviousGroup = () => onPageChange((groupIndex - 2) * numberOfPages + 1);
-   const handleNextGroup = () => onPageChange(groupIndex * numberOfPages + 1);
+   const handlePreviousGroup = () => onPageChange((groupIndex - 2) * NUMBER_OF_PAGES + 1);
+   const handleNextGroup = () => onPageChange(groupIndex * NUMBER_OF_PAGES + 1);
    return (
       <div className={clsx(styles['pagination'])}>
          <ArrowButton

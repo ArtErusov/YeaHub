@@ -1,4 +1,4 @@
-.long-answer {
+.answer {
    background-color: var(--color-white);
    border-radius: 24px;
    padding: 24px;
@@ -6,6 +6,7 @@
    &__title {
       color: var(--color-black-800);
       font-size: 1.5rem;
+      font-weight: 500;
    }
 
    &__description {

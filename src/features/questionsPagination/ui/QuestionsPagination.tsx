@@ -6,11 +6,6 @@ export function QuestionsPagination({ totalPages }: QuestionsPaginationProps) {
    const { currentPage, onPageChange } = usePagination();
 
    return (
-      <Pagination
-         totalPages={totalPages}
-         currentPage={currentPage}
-         onPageChange={onPageChange}
-         numberOfPages={10}
-      />
+      <Pagination totalPages={totalPages} currentPage={currentPage} onPageChange={onPageChange} />
    );
 }

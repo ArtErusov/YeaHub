@@ -1,10 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useGetAnswerQuery } from '../api/questionAnswerApi';
-
-import LongAnswer from './LongAnswer/LongAnswer';
 import styles from './QuestionDetails.module.scss';
-import ShortAnswer from './ShortAnswer/ShortAnswer';
-import TitleAnswer from './TitleAnswer/TitleAnswer';
+import { Answer } from '@/shared/ui/answer';
 
 function QuestionDetails() {
    const { id } = useParams();
@@ -18,16 +15,14 @@ function QuestionDetails() {
       return <div>Ошибка при загрузке ответа</div>;
    }
 
-   if (!data) {
-      return <div>Нет данных</div>;
-   }
    return (
-      <div className={styles['details']}>
-         <div className={styles['details__content']}>
-            <TitleAnswer title={data.title} description={data.description} />
-            <ShortAnswer shortAnswer={data.shortAnswer} />
-            <LongAnswer longAnswer={data.longAnswer} />
+      <div className={styles['question-details']}>
+         <div className={styles['question-details__header']}>
+            <h2 className={styles['question-details__title']}>{data.title}</h2>
+            <p className={styles['question-details__description']}>{data.description}</p>
          </div>
+         <Answer answer={data.shortAnswer} label="short" />
+         <Answer answer={data.longAnswer} label="long" />
       </div>
    );
 }

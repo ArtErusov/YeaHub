@@ -1,13 +1,24 @@
-.details {
+.question-details {
    display: flex;
    gap: 20px;
-   justify-content: center;
-   margin-top: 20px;
+   margin: 20px auto 0;
+   width: 800px;
+   flex-direction: column;
+   gap: 20px;
 
-   &__content {
-      width: 800px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
+   &__header {
+      background-color: var(--color-white);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: var(--box-shadow);
+   }
+   &__title {
+      color: var(--color-black-800);
+   }
+
+   &__description {
+      font-weight: 500;
+      margin-top: 10px;
+      color: var(--color-black-800);
    }
 }

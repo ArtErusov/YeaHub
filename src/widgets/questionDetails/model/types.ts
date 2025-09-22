@@ -51,16 +51,3 @@ export interface QueryParams {
 }
 
 
-export interface  LongAnswerProps  {
-   longAnswer: string;
-};
-
-export interface ShortAnswerProps  {
-   shortAnswer: string;
-};
-
-
-export interface TitleAnswerProps {
-   title: string;
-   description: string;
-}

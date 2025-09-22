@@ -1,7 +1,5 @@
 import QuestionDetails from '@/widgets/questionDetails';
 
-function QuestionDetailsPage() {
+export const QuestionDetailsPage = () => {
    return <QuestionDetails />;
-}
-
-export default QuestionDetailsPage;
+};
