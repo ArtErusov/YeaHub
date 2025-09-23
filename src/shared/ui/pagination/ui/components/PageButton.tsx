@@ -1,11 +1,6 @@
 import clsx from 'clsx';
+import type { PageButtonProps } from '../../model/types';
 import styles from '../Pagination.module.scss';
-
-interface PageButtonProps {
-   page: number;
-   currentPage: number;
-   onClick: (page: number) => void;
-}
 
 export function PageButton({ page, currentPage, onClick }: PageButtonProps) {
    return (

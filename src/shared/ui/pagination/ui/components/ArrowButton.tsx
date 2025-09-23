@@ -1,12 +1,7 @@
 import ArrowIcon from '@shared/assets/icon/Arrow_btn.svg?react';
 import clsx from 'clsx';
+import type { ArrowButtonProps } from '../../model/types';
 import styles from '../Pagination.module.scss';
-
-interface ArrowButtonProps {
-   direction?: 'prev' | 'next';
-   onClick: () => void;
-   disabled?: boolean;
-}
 
 export function ArrowButton({ direction = 'prev', onClick, disabled }: ArrowButtonProps) {
    return (
