@@ -1,10 +1,10 @@
+import clsx from 'clsx';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import clsx from 'clsx';
 import styles from './Question.module.scss';
+import { sanitizeHTML } from '@/shared/lib/sanitizeHTML';
 import type { QuestionType } from '@/shared/types/QuestionType';
 
-import { sanitizeHTML } from '@/shared/lib/sanitizeHTML';
 import arrow from '/svg/arrowOpen.svg';
 import { QuestionMetric } from '@/shared/ui/questionMetric';
 

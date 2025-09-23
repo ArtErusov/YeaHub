@@ -1,5 +1,5 @@
-import { NUMBER_OF_PAGES } from "@/shared/config/pagination";
 import type { GetPagesRangeParams } from "../model/types";
+import { NUMBER_OF_PAGES } from "@/shared/config/pagination";
 
 export function getPagesRange({
   currentPage,

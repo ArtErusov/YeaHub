@@ -1,5 +1,5 @@
-import { useFilters } from '@/shared/lib/hooks/useFilters';
 import styles from './Search.module.scss';
+import { useFilters } from '@/shared/lib/hooks/useFilters';
 
 export const Search = () => {
    const { filters, setFilter } = useFilters();

@@ -1,5 +1,5 @@
-import clsx from 'clsx';
 import ArrowIcon from '@shared/assets/icon/Arrow_btn.svg?react';
+import clsx from 'clsx';
 import styles from '../Pagination.module.scss';
 
 interface ArrowButtonProps {

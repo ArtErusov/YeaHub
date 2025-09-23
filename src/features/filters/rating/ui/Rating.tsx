@@ -1,6 +1,6 @@
+import styles from './Rating.module.scss';
 import { useFilters } from '@/shared/lib/hooks/useFilters';
 import SelectionItem from '@/shared/ui/selectionItem';
-import styles from './Rating.module.scss';
 
 export const Rating = () => {
    const ratingItems = [1, 2, 3, 4, 5];

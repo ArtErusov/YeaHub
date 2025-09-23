@@ -1,8 +1,8 @@
-import { QuestionsPagination } from '@/features/questionsPagination';
 import { useQuestions } from '../model/useQuestions';
 import styles from './QuestionsBlock.module.scss';
 
 import { QuestionsList } from './questionsList/QuestionsList';
+import { QuestionsPagination } from '@/features/questionsPagination';
 
 export const QuestionsBlock = () => {
    const { questions, totalPages, isLoading, error } = useQuestions();

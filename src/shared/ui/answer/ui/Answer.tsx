@@ -1,5 +1,5 @@
-import styles from './Answer.module.scss';
 import type { AnswerProps } from '../module/types';
+import styles from './Answer.module.scss';
 import { sanitizeHTML } from '@/shared/lib/sanitizeHTML';
 
 export const Answer = ({ answer, label }: AnswerProps) => {

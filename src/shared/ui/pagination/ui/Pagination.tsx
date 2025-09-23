@@ -1,16 +1,14 @@
 import clsx from 'clsx';
+import { getPagesRange } from '../lib/getPagesRange';
+import type { PaginationProps } from '../model/types';
 import { ArrowButton } from './components/ArrowButton';
 import { DotsButton } from './components/DotsButton';
 import { PageButton } from './components/PageButton';
 import styles from './Pagination.module.scss';
-import { getPagesRange } from '../lib/getPagesRange';
-import type { PaginationProps } from '../model/types';
 import { NUMBER_OF_PAGES } from '@/shared/config/pagination';
 
 export function Pagination({ totalPages, currentPage, onPageChange }: PaginationProps) {
    if (totalPages <= 1) return null;
-
-   NUMBER_OF_PAGES;
 
    const { pages, groupIndex, totalGroups } = getPagesRange({
       currentPage,

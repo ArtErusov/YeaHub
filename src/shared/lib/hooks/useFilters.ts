@@ -8,7 +8,7 @@ export function useFilters() {
   const filters = {
     title: searchParams.get('title') || '',
     rate: searchParams.get('rate') || '',
-    skills: searchParams.get('skills')?.split(',') || [],
+    skills: searchParams.get('skills') || '',
   };
 
   const setFilter = (key: FilterKey, value: string | string[] | null) => {
