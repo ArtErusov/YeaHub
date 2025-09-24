@@ -1,7 +1,9 @@
+import { lazy, Suspense } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import AppLayout from '@/app/layouts/AppLayout';
-import { QuestionDetailsPage } from '@/page/questionDetailsPage';
 import { QuestionsPage } from '@/page/questionsPage';
+
+const QuestionDetailsPage = lazy(() => import('@/page/questionDetailsPage'));
 
 const router = createBrowserRouter([
    {
@@ -14,7 +16,11 @@ const router = createBrowserRouter([
          },
          {
             path: 'questions/:id',
-            element: <QuestionDetailsPage />,
+            element: (
+               <Suspense fallback={<div>Загрузка...</div>}>
+                  <QuestionDetailsPage />
+               </Suspense>
+            ),
          },
       ],
    },

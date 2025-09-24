@@ -1,1 +1,1 @@
-export { QuestionDetailsPage } from './ui/QuestionDetailsPage';
+export { default } from './ui/QuestionDetailsPage';

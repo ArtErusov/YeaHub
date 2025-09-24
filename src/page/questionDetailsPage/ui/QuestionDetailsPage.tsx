@@ -1,5 +1,7 @@
 import QuestionDetails from '@/entities/questionDetails';
 
-export const QuestionDetailsPage = () => {
+const QuestionDetailsPage = () => {
    return <QuestionDetails />;
 };
+
+export default QuestionDetailsPage;
