@@ -2,20 +2,21 @@ import { useParams } from 'react-router-dom';
 import { useGetQuestionQuery } from '../api/getQuestionApi';
 import styles from './QuestionDetails.module.scss';
 import { Answer } from '@/shared/ui/answer';
+import { Skeleton } from '@/shared/ui/skeleton';
 
 function QuestionDetails() {
    const { id } = useParams();
    const { data, isLoading, isError } = useGetQuestionQuery({ id });
 
    if (isLoading) {
-      return <div>Загрузка...</div>;
+      return <Skeleton>Загрузка...</Skeleton>;
    }
 
    if (isError) {
-      return <div>Ошибка при загрузке ответа</div>;
+      return <Skeleton>Ошибка при загрузке ответа</Skeleton>;
    }
    if (!data) {
-      return <div>Нет данных</div>;
+      return <Skeleton>Нет данных</Skeleton>;
    }
 
    return (
