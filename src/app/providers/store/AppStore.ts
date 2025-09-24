@@ -1,13 +1,13 @@
-import { configureStore } from "@reduxjs/toolkit";
-import filtersReducer from "@/features/questionsFilters/skills/model/filtersSlice";
-import baseApi from "@/shared/api/baseApi";
+import { configureStore } from '@reduxjs/toolkit';
+import filtersReducer from '@/features/questionsFilters/skills/model/filtersSlice';
+import baseApi from '@/shared/api/baseApi';
 
 const store = configureStore({
-  reducer: {
-    [baseApi.reducerPath]: baseApi.reducer,
-    filters: filtersReducer,
-  },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(baseApi.middleware),
+   reducer: {
+      [baseApi.reducerPath]: baseApi.reducer,
+      filters: filtersReducer,
+   },
+   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(baseApi.middleware),
 });
 
 export default store;

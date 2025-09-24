@@ -1,1 +1,1 @@
-export { QuestionsPagination } from './ui/QuestionsPagination'
+export { QuestionsPagination } from './ui/QuestionsPagination';

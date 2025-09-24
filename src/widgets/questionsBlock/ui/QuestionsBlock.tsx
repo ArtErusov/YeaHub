@@ -1,7 +1,6 @@
-import { useQuestions } from '../model/useQuestions';
+import { useQuestions } from '../../../entities/questionsList/model/useQuestions';
 import styles from './QuestionsBlock.module.scss';
-
-import { QuestionsList } from './questionsList/QuestionsList';
+import { QuestionsList } from '@/entities/questionsList';
 import { QuestionsPagination } from '@/features/questionsPagination';
 
 export const QuestionsBlock = () => {

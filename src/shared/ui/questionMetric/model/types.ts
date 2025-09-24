@@ -1,5 +1,4 @@
-
 export interface InfoItemProps {
-   variant: 'rating'| 'complexity';
+   variant: 'rating' | 'complexity';
    value: number;
 }

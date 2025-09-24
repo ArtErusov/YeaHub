@@ -1,2 +1,1 @@
-export {Skills} from "./ui/Skills";
-
+export { Skills } from './ui/Skills';

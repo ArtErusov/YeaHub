@@ -1,4 +1,4 @@
-import type { QuestionsListProps } from '../../model/types';
+import type { QuestionsListProps } from '../model/types';
 import styles from './QuestionsList.module.scss';
 import { Question } from '@/entities/question';
 

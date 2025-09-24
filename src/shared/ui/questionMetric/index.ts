@@ -1,1 +1,1 @@
-export {QuestionMetric} from './ui/QuestionMetric'
+export { QuestionMetric } from './ui/QuestionMetric';

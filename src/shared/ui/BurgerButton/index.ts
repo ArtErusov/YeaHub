@@ -1,1 +1,1 @@
-export  { BurgerButton }  from "./ui/BurgerButton";
+export { BurgerButton } from './ui/BurgerButton';

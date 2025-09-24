@@ -1,2 +1,1 @@
-export { QuestionsBlock } from "./ui/QuestionsBlock";
-
+export { QuestionsBlock } from './ui/QuestionsBlock';

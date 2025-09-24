@@ -1,21 +1,21 @@
-import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 
 interface FiltersState {
-  skills: number[];
+   skills: number[];
 }
 
 const initialState: FiltersState = {
-  skills: [],
+   skills: [],
 };
 
 const filtersSlice = createSlice({
-  name: "filters",
-  initialState,
-  reducers: {
-    setSkill: (state, action: PayloadAction<number>) => {
-  state.skills.push(action.payload);
-},
-  },
+   name: 'filters',
+   initialState,
+   reducers: {
+      setSkill: (state, action: PayloadAction<number>) => {
+         state.skills.push(action.payload);
+      },
+   },
 });
 
 export const { setSkill } = filtersSlice.actions;

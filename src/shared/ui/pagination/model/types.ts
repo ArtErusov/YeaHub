@@ -1,4 +1,3 @@
-
 export interface PaginationProps {
    totalPages: number;
    currentPage: number;
@@ -6,17 +5,15 @@ export interface PaginationProps {
 }
 
 export interface GetPagesRangeParams {
-  currentPage: number;
-  totalPages: number;
+   currentPage: number;
+   totalPages: number;
 }
-
 
 export interface ArrowButtonProps {
    direction?: 'prev' | 'next';
    onClick: () => void;
    disabled?: boolean;
 }
-
 
 export interface DotsButtonProps {
    onClick: () => void;

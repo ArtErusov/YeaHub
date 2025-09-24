@@ -1,7 +1,4 @@
-
 export interface AnswerProps {
-    answer: string;
-  label: "long" | "short"
+   answer: string;
+   label: 'long' | 'short';
 }
-
-

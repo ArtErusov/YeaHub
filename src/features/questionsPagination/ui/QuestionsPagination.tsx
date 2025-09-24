@@ -1,5 +1,5 @@
-import { usePagination } from '../lib/usePagination';
 import type { QuestionsPaginationProps } from '../model/types';
+import { usePagination } from '../model/usePagination';
 import { Pagination } from '@/shared/ui/pagination';
 
 export function QuestionsPagination({ totalPages }: QuestionsPaginationProps) {
