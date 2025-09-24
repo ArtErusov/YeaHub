@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import filtersReducer from "@/features/filters/skills/model/filtersSlice";
+import filtersReducer from "@/features/questionsFilters/skills/model/filtersSlice";
 import baseApi from "@/shared/api/baseApi";
 
 const store = configureStore({

@@ -4,7 +4,7 @@ import styles from './Skills.module.scss';
 import { useFilters } from '@/shared/lib/hooks/useFilters';
 import SelectionItem from '@/shared/ui/selectionItem';
 
-export function Skills() {
+export const Skills = () => {
    const [showAll, setShowAll] = useState(false);
    const { filters, setFilter } = useFilters();
    const { data, isLoading, error } = useGetSkillsQuery();
@@ -39,6 +39,4 @@ export function Skills() {
          </button>
       </div>
    );
-}
-
-export default Skills;
+};

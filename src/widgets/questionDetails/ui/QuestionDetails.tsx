@@ -1,11 +1,11 @@
 import { useParams } from 'react-router-dom';
-import { useGetAnswerQuery } from '../api/questionAnswerApi';
+import { useGetQuestionQuery } from '../api/getQuestionApi';
 import styles from './QuestionDetails.module.scss';
 import { Answer } from '@/shared/ui/answer';
 
 function QuestionDetails() {
    const { id } = useParams();
-   const { data, isLoading, isError } = useGetAnswerQuery({ id });
+   const { data, isLoading, isError } = useGetQuestionQuery({ id });
 
    if (isLoading) {
       return <div>Загрузка...</div>;
@@ -13,6 +13,9 @@ function QuestionDetails() {
 
    if (isError) {
       return <div>Ошибка при загрузке ответа</div>;
+   }
+   if (!data) {
+      return <div>Нет данных</div>;
    }
 
    return (
