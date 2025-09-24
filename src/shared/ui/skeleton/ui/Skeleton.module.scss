@@ -1,0 +1,15 @@
+.skeleton {
+   width: 600px;
+   height: 600px;
+   border-radius: 24px;
+   background-color: var(--color-white);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   box-shadow: (--box-shadow);
+   margin: 20px auto;
+   &__title {
+      font-size: 30px;
+      font-weight: 600;
+   }
+}
